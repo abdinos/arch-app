@@ -2,6 +2,7 @@ package myboot.app4.test;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.*;
 import org.springframework.security.acls.model.NotFoundException;
 import org.springframework.web.client.HttpClientErrorException;
@@ -13,7 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+@SpringBootTest
 class HelloRestControllerTest {
 
     @Test
