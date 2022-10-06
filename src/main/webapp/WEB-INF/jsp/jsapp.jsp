@@ -28,11 +28,18 @@
             <tr v-for="element in movies">
                 <td>{{element.name}}</td>
                 <td>{{element.year}}</td>
-                <td> <button v-on:click="">Montrer</button>
-                    <button v-on:click="">Supprimer</button></td>
+                <td> <button v-on:click="showMovie(element.id)">Montrer</button>
+                    <button v-on:click="deleteMovie(element.id)">Supprimer</button></td>
 
             </tr>
+
         </table>
+        <div v-if="movie != null">
+            <p>{{movie.name}}</p>
+            <p>{{movie.year}}</p>
+            <p>{{movie.description}}</p>
+
+        </div>
     </div>
 </div>
 .

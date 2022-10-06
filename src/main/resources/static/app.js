@@ -9,6 +9,7 @@ const myApp = {
             list: [10, 20, 30],
             axios: null,
             movies : [],
+            movie : "",
         }
     },
 
@@ -40,6 +41,22 @@ const myApp = {
                     console.log("get movies done");
                     this.movies = r.data;
                 });
+        },
+        deleteMovie: function (id) {
+            this.axios.delete('/movies/'+id)
+                .then(r => {
+                    console.log("delete movie "+id+" done");
+                    this.getMovies()});
+
+            
+        },
+        showMovie: function (id) {
+            this.axios.get('/movies/'+id)
+                .then(r => {
+                    console.log("show movie "+id+" done");
+                    this.movie = r.data});
+
+
         }
 
     }
